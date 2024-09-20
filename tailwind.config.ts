@@ -18,6 +18,9 @@ const config: Config = {
         text: 'var(--text)',
         border: 'var(--border)',
       },
+      fontFamily: {
+        garamond: ['GaramondRegular', 'serif'],
+      },
     },
   },
   plugins: [],
