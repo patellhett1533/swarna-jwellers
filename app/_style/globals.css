@@ -39,3 +39,42 @@ h1 {
     text-wrap: balance;
   }
 }
+
+.gift-layout {
+  width: 100%;
+  display: grid;
+  grid-template-areas:
+    'gift1 gift1 gift4'
+    'gift2 gift3 gift5';
+  gap: 3rem;
+}
+
+.gift-1 {
+  grid-area: gift1;
+}
+
+.gift-2 {
+  grid-area: gift2;
+}
+
+.gift-3 {
+  grid-area: gift3;
+}
+
+.gift-4 {
+  grid-area: gift4;
+}
+
+.gift-5 {
+  grid-area: gift5;
+}
+
+@media screen and (max-width: 768px) {
+  .gift-layout {
+    grid-template-areas:
+      'gift1 gift1'
+      'gift2 gift3'
+      'gift4 gift5';
+    gap: 1.5rem;
+  }
+}
