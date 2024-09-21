@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import './_style/globals.css'
 import Header from './_components/Header'
+import Footer from './_components/Footer'
 
 export const metadata: Metadata = {
   title: 'Swarna Jwellers - A trusted Gold Retailer',
@@ -18,6 +19,7 @@ export default function RootLayout({
       <body>
         <Header />
         {children}
+        <Footer />
       </body>
     </html>
   )
