@@ -36,7 +36,7 @@ const Header = () => {
         <Link href="#" className="uppercase font-light">
           Jwellery
         </Link>
-        <Link href="#" className="uppercase font-light">
+        <Link href="/new-release" className="uppercase font-light">
           New Release
         </Link>
         <Link href="#" className="uppercase font-light">
