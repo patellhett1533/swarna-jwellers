@@ -1,6 +1,7 @@
 import React from 'react'
 import Image from 'next/image'
 import ProductDetail from '@/app/_components/ProductDetail'
+import ProductCard from '@/app/_components/ProductCard'
 
 const page = ({ params }: { params: { category: string; alias: string } }) => {
   return (
@@ -30,6 +31,42 @@ const page = ({ params }: { params: { category: string; alias: string } }) => {
           <div className="mt-8">
             <ProductDetail />
           </div>
+        </div>
+      </div>
+      <div className="mt-12">
+        <p className="text-4xl font-garamond capitalize">Recommended for you</p>
+        <p>Based on your history</p>
+        <div className="grid grid-cols-5 gap-8 mt-12">
+          <ProductCard
+            name="Initial Pendant"
+            price={80}
+            img="/images/initial-pendant.png"
+            link="#"
+          />
+          <ProductCard
+            name="Heart Drop"
+            price={100}
+            img="/images/heart-drop.png"
+            link="#"
+          />
+          <ProductCard
+            name="Leaf Pendant"
+            price={90}
+            img="/images/leaf-pendant.png"
+            link="#"
+          />
+          <ProductCard
+            name="Diamond Choker"
+            price={300}
+            img="/images/diamond-choker.png"
+            link="#"
+          />
+          <ProductCard
+            name="Ruby Pendant"
+            price={250}
+            img="/images/ruby-pendant.png"
+            link="#"
+          />
         </div>
       </div>
     </div>
