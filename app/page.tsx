@@ -5,22 +5,27 @@ const category = [
   {
     name: 'Neckleces',
     image: '/images/neckles-category.png',
+    link: '/neckleces',
   },
   {
     name: 'Earrings',
     image: '/images/earring-category.png',
+    link: '/earrings',
   },
   {
     name: 'Bracclets',
     image: '/images/bracclets-category.png',
+    link: '/bracclets',
   },
   {
     name: 'Rings',
     image: '/images/rings-category.png',
+    link: '/rings',
   },
   {
     name: 'Charms',
     image: '/images/charms-category.png',
+    link: '/charms',
   },
 ]
 
@@ -37,7 +42,7 @@ export default function Home() {
           </p>
           <div className="mt-4 max-md:text-center">
             <Link
-              href="#"
+              href="/neckleces"
               className="p-4 text-background border border-background uppercase"
             >
               Shop Now
@@ -54,7 +59,7 @@ export default function Home() {
         </p>
         <div className="grid md:grid-cols-5 grid-cols-2 mt-16 md:gap-12 gap-8">
           {category.map((item, index) => (
-            <Link href="#" key={index}>
+            <Link href={item.link} key={index}>
               <Image
                 src={item.image}
                 alt={item.name}

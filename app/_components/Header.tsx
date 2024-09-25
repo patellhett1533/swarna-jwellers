@@ -10,7 +10,7 @@ const Header = () => {
       <div onClick={() => setOpen(!open)} className="md:hidden">
         <Image src="/images/hamburger.svg" alt="Save" width={25} height={25} />
       </div>
-      <div>
+      <Link href="/">
         <Image
           src="/images/swarna-logo.png"
           alt="Swarna Logo"
@@ -18,7 +18,7 @@ const Header = () => {
           height={20}
           className="md:w-40 w-32"
         />
-      </div>
+      </Link>
       <ul
         className={`flex items-center md:gap-8 gap-6 max-md:fixed max-md:bg-background max-md:flex-col max-md:w-full ${open ? 'max-md:top-0' : 'max-md:-top-full'} max-md:left-0 max-md:h-40 max-md:justify-center transition-all duration-500 max-md:shadow-lg`}
       >
@@ -33,13 +33,13 @@ const Header = () => {
             height={25}
           />
         </div>
-        <Link href="#" className="uppercase font-light">
+        <Link href="/neckleces" className="uppercase font-light">
           Jwellery
         </Link>
         <Link href="/new-release" className="uppercase font-light">
           New Release
         </Link>
-        <Link href="#" className="uppercase font-light">
+        <Link href="/gifts" className="uppercase font-light">
           Gifts
         </Link>
       </ul>
@@ -50,7 +50,7 @@ const Header = () => {
         <Link href="#" className="max-md:hidden">
           <Image src="/images/save.svg" alt="Save" width={25} height={25} />
         </Link>
-        <Link href="#">
+        <Link href="/order-review">
           <Image src="/images/cart.svg" alt="Save" width={25} height={25} />
         </Link>
       </div>

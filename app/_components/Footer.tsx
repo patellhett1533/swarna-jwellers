@@ -9,30 +9,30 @@ const Footer = () => {
           <div>
             <p className="font-garamond text-2xl mb-4">CUSTOMER SERVICE</p>
             <ul className="flex flex-col gap-2">
-              <Link href="#">Contact Us</Link>
-              <Link href="#">Track Your Order</Link>
-              <Link href="#">Shipping & Returns</Link>
-              <Link href="#">FAQs</Link>
-              <Link href="#">Schedule an appointment</Link>
+              <Link href="/contact-us">Contact Us</Link>
+              <Link href="/order-track">Track Your Order</Link>
+              <Link href="/shipping">Shipping & Returns</Link>
+              <Link href="/faqs">FAQs</Link>
+              <Link href="/appointment">Schedule an appointment</Link>
             </ul>
           </div>
           <div>
             <p className="font-garamond text-2xl mb-4">ABOUT US</p>
             <ul className="flex flex-col gap-2">
-              <Link href="#">Origin</Link>
-              <Link href="#">Our Purpose</Link>
-              <Link href="#">Careers</Link>
-              <Link href="#">Sustainability</Link>
-              <Link href="#">Giving Back</Link>
+              <Link href="/">Origin</Link>
+              <Link href="/">Our Purpose</Link>
+              <Link href="/">Careers</Link>
+              <Link href="/">Sustainability</Link>
+              <Link href="/">Giving Back</Link>
             </ul>
           </div>
           <div>
             <p className="font-garamond text-2xl mb-4">MATERIAL CARE</p>
             <ul className="flex flex-col gap-2">
-              <Link href="#">Jewelry Repair</Link>
-              <Link href="#">Ring Sizing</Link>
-              <Link href="#">Metal Allergy Resources</Link>
-              <Link href="#">Styling Tips</Link>
+              <Link href="/">Jewelry Repair</Link>
+              <Link href="/contact-us">Ring Sizing</Link>
+              <Link href="/">Metal Allergy Resources</Link>
+              <Link href="/">Styling Tips</Link>
             </ul>
           </div>
           <div>
@@ -56,19 +56,19 @@ const Footer = () => {
       <div className="mt-12 flex items-center justify-between max-md:flex-col">
         <p>&copy; {new Date().getFullYear()} Swarna Jwellers</p>
         <div className="flex items-center gap-4 max-md:hidden">
-          <Link href="#" className="text-sm">
+          <Link href="/" className="text-sm">
             PRIVACY POLICY
           </Link>
-          <Link href="#" className="text-sm">
+          <Link href="/" className="text-sm">
             TERMS OF USE
           </Link>
-          <Link href="#" className="text-sm">
+          <Link href="/" className="text-sm">
             SITEMAP
           </Link>
-          <Link href="#" className="text-sm">
+          <Link href="/" className="text-sm">
             DO NOT SELL MY INFORMATION
           </Link>
-          <Link href="#" className="text-sm">
+          <Link href="/" className="text-sm">
             COOKIES
           </Link>
         </div>
