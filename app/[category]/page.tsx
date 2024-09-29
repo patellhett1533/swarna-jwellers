@@ -27,6 +27,7 @@ const page = async ({ params }: { params: { category: string } }) => {
             price={product.price}
             img={product.images.split(', ')[0]}
             link={product.alias}
+            category={product.category}
           />
         ))}
         {/* <ProductCard

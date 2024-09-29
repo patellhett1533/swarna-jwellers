@@ -7,11 +7,12 @@ interface Props {
   price: string
   img: string
   link: string
+  category: string
 }
 
 const ProductCard = (props: Props) => {
   return (
-    <Link href={`/${props.link}`}>
+    <Link href={`/${props.category}/${props.link}`}>
       <Image src={props.img} alt="Initial Pendant" width={300} height={300} />
       <p className="text-lg mt-2 line-clamp-2">{props.name}</p>
       <p>₹{props.price}</p>

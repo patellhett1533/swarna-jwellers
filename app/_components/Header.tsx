@@ -1,10 +1,21 @@
 'use client'
+import { useAppSelector } from '@/lib/hook'
 import Image from 'next/image'
 import Link from 'next/link'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 
 const Header = () => {
   const [open, setOpen] = React.useState(false)
+  const [isMounted, setIsMounted] = useState(false)
+
+  const cartItemsCount = useAppSelector((state) =>
+    state.cart.items.reduce((count, item) => count + item.quantity, 0)
+  )
+
+  useEffect(() => {
+    setIsMounted(true)
+  }, [])
+
   return (
     <div className="md:h-20 h-16 md:px-8 px-8 flex items-center justify-between">
       <div onClick={() => setOpen(!open)} className="md:hidden">
@@ -50,8 +61,13 @@ const Header = () => {
         <Link href="#" className="max-md:hidden">
           <Image src="/images/save.svg" alt="Save" width={25} height={25} />
         </Link>
-        <Link href="/cart">
+        <Link href="/cart" className="relative">
           <Image src="/images/cart.svg" alt="Save" width={25} height={25} />
+          {cartItemsCount > 0 && isMounted && (
+            <div className="absolute top-0 right-0 -translate-y-1/4 translate-x-1/4 w-4 h-4 rounded-full bg-red-500 text-white flex items-center justify-center text-xs">
+              {cartItemsCount || 0}
+            </div>
+          )}
         </Link>
       </div>
     </div>

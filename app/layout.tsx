@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import './_style/globals.css'
 import Header from './_components/Header'
 import Footer from './_components/Footer'
+import StoreProvider from './StoreProvider'
 
 export const metadata: Metadata = {
   title: 'Swarna Jwellers - A trusted Gold Retailer',
@@ -16,11 +17,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>
-        <Header />
-        {children}
-        <Footer />
-      </body>
+      <StoreProvider>
+        <body>
+          <Header />
+          {children}
+          <Footer />
+        </body>
+      </StoreProvider>
     </html>
   )
 }

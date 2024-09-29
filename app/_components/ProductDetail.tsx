@@ -2,7 +2,12 @@
 import Image from 'next/image'
 import React from 'react'
 
-const ProductDetail = () => {
+interface Props {
+  productDetail: string
+  weight: string
+}
+
+const ProductDetail = (props: Props) => {
   const [isOpenDetail, setIsOpenDetail] = React.useState(false)
   const [isOpenTips, setIsOpenTips] = React.useState(false)
   return (
@@ -24,7 +29,7 @@ const ProductDetail = () => {
         <div
           className={`${isOpenDetail ? 'max-h-full' : 'max-h-0'} overflow-hidden transition-[max-height]`}
         >
-          <p className="mt-6">
+          {/* <p className="mt-6">
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facere
             provident dolor a sunt velit illo nemo quaerat animi aperiam quia.
             Velit tempora soluta harum cumque?
@@ -32,7 +37,13 @@ const ProductDetail = () => {
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore vel
             nulla unde quis, illum distinctio. Beatae, animi dicta!
-          </p>
+          </p> */}
+          <ul className="mt-6 list-disc list-inside">
+            <li>Gross Weight: {props.weight}</li>
+            {props.productDetail.split(',').map((detail, index) => (
+              <li key={index}>{detail}</li>
+            ))}
+          </ul>
         </div>
       </div>
       <div className="pb-2 border-b border-container cursor-pointer mt-2">
