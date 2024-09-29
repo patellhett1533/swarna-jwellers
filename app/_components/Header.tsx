@@ -50,7 +50,7 @@ const Header = () => {
         <Link href="#" className="max-md:hidden">
           <Image src="/images/save.svg" alt="Save" width={25} height={25} />
         </Link>
-        <Link href="/order-review">
+        <Link href="/cart">
           <Image src="/images/cart.svg" alt="Save" width={25} height={25} />
         </Link>
       </div>

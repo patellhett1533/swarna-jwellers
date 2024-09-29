@@ -3,8 +3,8 @@ import OrderTypeForm from '../_components/OrderTypeForm'
 
 const page = () => {
   return (
-    <div className="md:px-16 md:py-12 py-8 px-8 flex items-start gap-12">
-      <div className="w-3/5 ">
+    <div className="md:px-16 md:py-12 py-8 px-8 flex items-start gap-12 max-md:flex-col">
+      <div className="md:w-3/5 w-full">
         <p className="text-4xl font-garamond capitalize pb-8 border-b border-container">
           My Information
         </p>
@@ -47,7 +47,7 @@ const page = () => {
         </div>
         <OrderTypeForm />
       </div>
-      <div className="w-2/5 sticky top-8">
+      <div className="md:w-2/5 md:sticky md:top-8 w-full">
         <p className="text-4xl font-garamond capitalize mb-8">Order Total</p>
         <div className="w-full py-4 border-t border-container flex items-center justify-between">
           <p>Subtotal</p>
