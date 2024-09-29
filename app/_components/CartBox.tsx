@@ -9,6 +9,7 @@ import {
 } from '@/lib/features/cartSlice'
 import { hidePopup, showPopup } from '@/lib/features/toastSlice'
 import jwelleryProduct from '@/data/product.json'
+import Link from 'next/link'
 
 const CartBox = () => {
   const dispatch = useDispatch()
@@ -132,102 +133,6 @@ const CartBox = () => {
                 </div>
               </div>
             ))}
-          {/* <div className="w-full py-8 border-t border-container flex items-start justify-between">
-            <div className="flex items-start gap-4">
-              <Image
-                src="/images/heart-drop.png"
-                alt=""
-                width={100}
-                height={100}
-                className="w-28 h-auto"
-              />
-              <div className="h-auto flex flex-col justify-between gap-4">
-                <div>
-                  <p className="text-xl">Heart Drop</p>
-                  <p className="text-lg">$100.00</p>
-                  <p className="">Quantity: 1</p>
-                </div>
-              </div>
-            </div>
-            <div className="flex items-center gap-8 ">
-              <p className="text-xl max-md:hidden">$100.00</p>
-              <button>
-                <Image src="/images/delete.svg" alt="" width={20} height={20} />
-              </button>
-            </div>
-          </div> */}
-          {/* <div className="w-full py-8 border-t border-container flex items-start justify-between">
-            <div className="flex items-start gap-4">
-              <Image
-                src="/images/heart-drop.png"
-                alt=""
-                width={100}
-                height={100}
-                className="w-24 h-auto"
-              />
-              <div className="h-auto flex flex-col justify-between gap-4">
-                <div>
-                  <p className="text-xl">Heart Drop</p>
-                  <p className="">Quantity: 1</p>
-                </div>
-                <button className="text-start">Edit Order</button>
-              </div>
-            </div>
-            <div className="flex items-center gap-8">
-              <p className="text-xl">$100.00</p>
-              <button>
-                <Image src="/images/delete.svg" alt="" width={20} height={20} />
-              </button>
-            </div>
-          </div>
-          <div className="w-full py-8 border-t border-container flex items-start justify-between">
-            <div className="flex items-start gap-4">
-              <Image
-                src="/images/heart-drop.png"
-                alt=""
-                width={100}
-                height={100}
-                className="w-24 h-auto"
-              />
-              <div className="h-auto flex flex-col justify-between gap-4">
-                <div>
-                  <p className="text-xl">Heart Drop</p>
-                  <p className="">Quantity: 1</p>
-                </div>
-                <button className="text-start">Edit Order</button>
-              </div>
-            </div>
-            <div className="flex items-center gap-8">
-              <p className="text-xl">$100.00</p>
-              <button>
-                <Image src="/images/delete.svg" alt="" width={20} height={20} />
-              </button>
-            </div>
-          </div>
-          <div className="w-full py-8 border-t border-container flex items-start justify-between">
-            <div className="flex items-start gap-4">
-              <Image
-                src="/images/heart-drop.png"
-                alt=""
-                width={100}
-                height={100}
-                className="w-24 h-auto"
-              />
-              <div className="h-auto flex flex-col justify-between gap-4">
-                <div>
-                  <p className="text-xl">Heart Drop</p>
-                  <p className="">Quantity: 1</p>
-                </div>
-                <button className="text-start">Edit Order</button>
-              </div>
-            </div>
-            <div className="flex items-center gap-8">
-              <p className="text-xl">$100.00</p>
-              <button>
-                <Image src="/images/delete.svg" alt="" width={20} height={20} />
-              </button>
-            </div>
-          </div> */}
           <div className="w-full border-t border-container"></div>
         </div>
       </div>
@@ -254,7 +159,12 @@ const CartBox = () => {
           </p>
         </div>
         <div className="w-full py-4 border-t border-container flex items-center justify-between">
-          <button className="w-full bg-container py-2">Place Order</button>
+          <Link
+            href="/information"
+            className="w-full bg-container py-2 text-center"
+          >
+            Place Order
+          </Link>
         </div>
       </div>
     </>
