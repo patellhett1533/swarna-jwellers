@@ -15,12 +15,12 @@ const category = [
   {
     name: 'Bracclets',
     image: '/images/bracclets-category.png',
-    link: '/bracclets',
+    link: '/bracelets',
   },
   {
     name: 'Rings',
     image: '/images/rings-category.png',
-    link: '/rings',
+    link: '/ring',
   },
   {
     name: 'Charms',
