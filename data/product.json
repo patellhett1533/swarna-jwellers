@@ -986,7 +986,8 @@
     "weight": "16.40 MM",
     "points": "Diamond Clarity: I1, Diamond Color: JKL, No Of Diamonds: 16, Brand: Tanishq, Collection: Bestsellers  ",
     "description": "An ideal symbol of modern refinement, this Finger Ring is the quintessence of luxury - tailored for the discerning woman who demands the spotlight at every upscale gathering.",
-    "images": "https://www.tanishq.co.in/dw/image/v2/BKCK_PRD/on/demandware.static/-/Sites-Tanishq-product-catalog/default/dw8456b784/images/hi-res/50D4A1FMFAA10_1.jpg?sw=640&sh=640, https://www.tanishq.co.in/dw/image/v2/BKCK_PRD/on/demandware.static/-/Sites-Tanishq-product-catalog/default/dw040733d5/images/hi-res/50D4A1FMFAA10_2.jpg?sw=640&sh=640, https://www.tanishq.co.in/dw/image/v2/BKCK_PRD/on/demandware.static/-/Sites-Tanishq-product-catalog/default/dwb3799081/images/hi-res/50D4A1FMFAA10_3.jpg?sw=640&sh=640"
+    "images": "https://www.tanishq.co.in/dw/image/v2/BKCK_PRD/on/demandware.static/-/Sites-Tanishq-product-catalog/default/dw8456b784/images/hi-res/50D4A1FMFAA10_1.jpg?sw=640&sh=640, https://www.tanishq.co.in/dw/image/v2/BKCK_PRD/on/demandware.static/-/Sites-Tanishq-product-catalog/default/dw040733d5/images/hi-res/50D4A1FMFAA10_2.jpg?sw=640&sh=640, https://www.tanishq.co.in/dw/image/v2/BKCK_PRD/on/demandware.static/-/Sites-Tanishq-product-catalog/default/dwb3799081/images/hi-res/50D4A1FMFAA10_3.jpg?sw=640&sh=640",
+    "category": "ring"
   },
   {
     "id": 91,
@@ -1002,6 +1003,7 @@
   {
     "id": 92,
     "name": "Geometric Splendour Diamond Finger Ring",
+    "alias": "geometric-splendour-diamond-finger-ring",
     "price": "29,356",
     "weight": "16.40 MM",
     "points": "Diamond Clarity: SI2, Diamond Color: G-H, No Of Diamonds: 9, Brand: Tanishq, Collection: Bestsellers  ",

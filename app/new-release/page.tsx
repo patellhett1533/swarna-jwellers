@@ -1,8 +1,17 @@
 import React from 'react'
 import Image from 'next/image'
+import jwelleryDetail from '@/data/product.json'
 import ProductCard from '../_components/ProductCard'
+import { notFound } from 'next/navigation'
 
-const page = () => {
+const getNewReleaseProduct = async () => {
+  return jwelleryDetail.sort(() => 0.5 - Math.random()).slice(0, 20)
+}
+
+const page = async () => {
+  const product = await getNewReleaseProduct()
+
+  if (product.length === 0) notFound()
   return (
     <>
       <section className="relative">
@@ -26,93 +35,17 @@ const page = () => {
         </div>
       </section>
       <section className="md:px-16 md:py-12 py-8 px-8">
-        <div className="flex items-center justify-between">
-          <div className="flex md:items-center md:gap-8 gap-2 max-md:flex-col">
-            <p className="text-3xl font-garamond">Neckleces</p>
-            <p className="translate-y-0.5 max-md:hidden">
-              With new beginnings come more pendants.
-            </p>
-          </div>
-          <div className="md:p-4 p-3 border border-text w-fit cursor-pointer max-md:text-sm">
-            Shop All Neckleces
-          </div>
-        </div>
-        <div className="grid md:grid-cols-5 grid-cols-2 mt-16 md:gap-12 gap-6 md:pb-16 pb-8 border-b border-container">
-          <ProductCard
-            name="Initial Pendant"
-            price={80}
-            img="/images/initial-pendant.png"
-            link="#"
-          />
-          <ProductCard
-            name="Heart Drop"
-            price={100}
-            img="/images/heart-drop.png"
-            link="#"
-          />
-          <ProductCard
-            name="Leaf Pendant"
-            price={90}
-            img="/images/leaf-pendant.png"
-            link="#"
-          />
-          <ProductCard
-            name="Diamond Choker"
-            price={300}
-            img="/images/diamond-choker.png"
-            link="#"
-          />
-          <ProductCard
-            name="Ruby Pendant"
-            price={250}
-            img="/images/ruby-pendant.png"
-            link="#"
-          />
-        </div>
-      </section>
-      <section className="md:px-16 md:py-12 py-8 px-8">
-        <div className="flex items-center justify-between">
-          <div className="flex md:items-center md:gap-8 gap-2 max-md:flex-col">
-            <p className="text-3xl font-garamond">Earrings</p>
-            <p className="translate-y-0.5 max-md:hidden">
-              Adorn your ears with the new atmosphere.
-            </p>
-          </div>
-          <div className="md:p-4 p-3 border border-text w-fit cursor-pointer max-md:text-sm">
-            Shop All Earrings
-          </div>
-        </div>
-        <div className="grid md:grid-cols-5 grid-cols-2 mt-16 md:gap-12 gap-6">
-          <ProductCard
-            name="Chain Drops"
-            price={40}
-            img="/images/chain-drops.png"
-            link="#"
-          />
-          <ProductCard
-            name="Diamond Studs"
-            price={200}
-            img="/images/diamond-studs.png"
-            link="#"
-          />
-          <ProductCard
-            name="Mini Hoops"
-            price={90}
-            img="/images/mini-hoops.png"
-            link="#"
-          />
-          <ProductCard
-            name="Dangling Leaves"
-            price={60}
-            img="/images/dangling-leaves.png"
-            link="#"
-          />
-          <ProductCard
-            name="Leaf Studs"
-            price={40}
-            img="/images/leaf-studs.png"
-            link="#"
-          />
+        <div className="grid grid-cols-5 gap-8 mt-12">
+          {product.map((product, index) => (
+            <ProductCard
+              key={index}
+              name={product.name}
+              price={product.price}
+              img={product.images.split(', ')[0]}
+              link={product.alias}
+              category={product.category}
+            />
+          ))}
         </div>
       </section>
     </>

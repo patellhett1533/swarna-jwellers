@@ -44,14 +44,11 @@ const Header = () => {
             height={25}
           />
         </div>
-        <Link href="/neckleces" className="uppercase font-light">
+        <Link href="/necklace" className="uppercase font-light">
           Jwellery
         </Link>
         <Link href="/new-release" className="uppercase font-light">
           New Release
-        </Link>
-        <Link href="/gifts" className="uppercase font-light">
-          Gifts
         </Link>
       </ul>
       <div className="flex items-center gap-8">

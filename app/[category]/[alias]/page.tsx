@@ -5,6 +5,13 @@ import ProductCard from '@/app/_components/ProductCard'
 import { notFound } from 'next/navigation'
 import AddToCart from '@/app/_components/AddToCart'
 
+export async function generateStaticParams() {
+  return jwelleryDetail.map((item) => ({
+    category: item.category,
+    alias: item.alias,
+  }))
+}
+
 const getProductDetail = async (category: string, alias: string) => {
   const data = jwelleryDetail.find(
     (item) => item.category === category && item.alias === alias
@@ -67,7 +74,7 @@ const page = async ({
               price={product.price}
               img={product.images.split(', ')[0]}
               link={product.alias}
-              category={product.category}
+              category={params.category}
             />
           ))}
         </div>

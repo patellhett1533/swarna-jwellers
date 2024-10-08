@@ -3,8 +3,14 @@ import ProductCard from '../_components/ProductCard'
 import jwelleryDetail from '@/data/product.json'
 import { notFound } from 'next/navigation'
 
+export async function generateStaticParams() {
+  return jwelleryDetail.map((category) => ({ category: category.category }))
+}
+
 const getCategoryProduct = async (category: string) => {
   const data = jwelleryDetail.filter((item) => item.category === category)
+
+  if (data.length === 0) notFound()
   return data
 }
 
@@ -27,7 +33,7 @@ const page = async ({ params }: { params: { category: string } }) => {
             price={product.price}
             img={product.images.split(', ')[0]}
             link={product.alias}
-            category={product.category}
+            category={params.category}
           />
         ))}
         {/* <ProductCard

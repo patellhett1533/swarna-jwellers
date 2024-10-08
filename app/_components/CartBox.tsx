@@ -1,5 +1,5 @@
 'use client'
-import React, { useEffect } from 'react'
+import React, { useCallback, useEffect } from 'react'
 import Image from 'next/image'
 import { useDispatch } from 'react-redux'
 import {
@@ -24,29 +24,39 @@ const CartBox = () => {
   >([])
   const [totalCart, setTotalCart] = React.useState(0)
 
-  const handleRemoveToCart = (id: string) => {
-    dispatch(removeItemFromCart(Number(id)))
-    dispatch(showPopup(`Item removed from cart`))
-    setTimeout(() => {
-      dispatch(hidePopup())
-    }, 8000)
-  }
+  const handleRemoveToCart = useCallback(
+    (id: string) => {
+      dispatch(removeItemFromCart(Number(id)))
+      dispatch(showPopup(`Item removed from cart`))
+      setTimeout(() => {
+        dispatch(hidePopup())
+      }, 8000)
+    },
+    [dispatch]
+  )
 
-  const handleQuantity = (id: string) => {
-    dispatch(
-      addItemToCart({
-        id: Number(id),
-        price: Number(
-          jwelleryProduct.find((product) => product.id.toString() == id)?.price
-        ),
-        quantity: 1,
-      })
-    )
-  }
+  const handleQuantity = useCallback(
+    (id: string) => {
+      dispatch(
+        addItemToCart({
+          id: Number(id),
+          price: Number(
+            jwelleryProduct.find((product) => product.id.toString() == id)
+              ?.price
+          ),
+          quantity: 1,
+        })
+      )
+    },
+    [dispatch]
+  )
 
-  const handleDecreaseQuantity = (id: string) => {
-    dispatch(decreaseItemQuantity(Number(id)))
-  }
+  const handleDecreaseQuantity = useCallback(
+    (id: string) => {
+      dispatch(decreaseItemQuantity(Number(id)))
+    },
+    [dispatch]
+  )
 
   useEffect(() => {
     const data = JSON.parse(localStorage.getItem('jwellery-cart') || '[]').items
