@@ -3,6 +3,16 @@ import ProductCard from '../_components/ProductCard'
 import jwelleryDetail from '@/data/product.json'
 import { notFound } from 'next/navigation'
 
+export const generateMetadata = ({
+  params,
+}: {
+  params: { category: string }
+}) => {
+  return {
+    title: params.category,
+  }
+}
+
 export async function generateStaticParams() {
   return jwelleryDetail.map((category) => ({ category: category.category }))
 }

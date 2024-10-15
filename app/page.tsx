@@ -5,7 +5,7 @@ const category = [
   {
     name: 'Neckleces',
     image: '/images/neckles-category.png',
-    link: '/neckleces',
+    link: '/necklace',
   },
   {
     name: 'Earrings',
@@ -15,7 +15,7 @@ const category = [
   {
     name: 'Bracclets',
     image: '/images/bracclets-category.png',
-    link: '/bracelets',
+    link: '/bracelet',
   },
   {
     name: 'Rings',
@@ -42,7 +42,7 @@ export default function Home() {
           </p>
           <div className="mt-4 max-md:text-center">
             <Link
-              href="/neckleces"
+              href="/necklace"
               className="p-4 text-background border border-background uppercase"
             >
               Shop Now

@@ -5,6 +5,18 @@ import ProductCard from '@/app/_components/ProductCard'
 import { notFound } from 'next/navigation'
 import AddToCart from '@/app/_components/AddToCart'
 
+export const generateMetadata = ({
+  params,
+}: {
+  params: { category: string; alias: string }
+}) => {
+  return {
+    title: jwelleryDetail.find(
+      (item) => item.category === params.category && item.alias === params.alias
+    )?.name,
+  }
+}
+
 export async function generateStaticParams() {
   return jwelleryDetail.map((item) => ({
     category: item.category,
