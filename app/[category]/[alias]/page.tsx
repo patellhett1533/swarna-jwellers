@@ -31,8 +31,15 @@ const getProductDetail = async (category: string, alias: string) => {
   return data
 }
 
-const getRecomendProduct = async (category: string) => {
-  return jwelleryDetail.sort(() => 0.5 - Math.random()).slice(0, 5)
+const getRecomendProduct = async (category: string, alias: string) => {
+  const categoryJwellery = jwelleryDetail.filter(
+    (item) => item.category === category
+  )
+  categoryJwellery.filter((item) => item.alias !== alias)
+  if (categoryJwellery)
+    return categoryJwellery.sort(() => 0.5 - Math.random()).slice(0, 5)
+
+  return notFound()
 }
 
 const page = async ({
@@ -41,7 +48,10 @@ const page = async ({
   params: { category: string; alias: string }
 }) => {
   const productDetail = await getProductDetail(params.category, params.alias)
-  const recomendedProduct = await getRecomendProduct(params.category)
+  const recomendedProduct = await getRecomendProduct(
+    params.category,
+    params.alias
+  )
 
   if (!productDetail) notFound()
   return (

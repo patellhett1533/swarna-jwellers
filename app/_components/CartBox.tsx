@@ -1,5 +1,5 @@
 'use client'
-import React, { useCallback, useEffect } from 'react'
+import React, { useEffect } from 'react'
 import Image from 'next/image'
 import { useDispatch } from 'react-redux'
 import {
@@ -24,39 +24,29 @@ const CartBox = () => {
   >([])
   const [totalCart, setTotalCart] = React.useState(0)
 
-  const handleRemoveToCart = useCallback(
-    (id: string) => {
-      dispatch(removeItemFromCart(Number(id)))
-      dispatch(showPopup(`Item removed from cart`))
-      setTimeout(() => {
-        dispatch(hidePopup())
-      }, 8000)
-    },
-    [dispatch]
-  )
+  const handleRemoveToCart = (id: string) => {
+    dispatch(removeItemFromCart(Number(id)))
+    dispatch(showPopup(`Item removed from cart`))
+    setTimeout(() => {
+      dispatch(hidePopup())
+    }, 8000)
+  }
 
-  const handleQuantity = useCallback(
-    (id: string) => {
-      dispatch(
-        addItemToCart({
-          id: Number(id),
-          price: Number(
-            jwelleryProduct.find((product) => product.id.toString() == id)
-              ?.price
-          ),
-          quantity: 1,
-        })
-      )
-    },
-    [dispatch]
-  )
+  const handleQuantity = (id: string) => {
+    dispatch(
+      addItemToCart({
+        id: Number(id),
+        price: Number(
+          jwelleryProduct.find((product) => product.id.toString() == id)?.price
+        ),
+        quantity: 1,
+      })
+    )
+  }
 
-  const handleDecreaseQuantity = useCallback(
-    (id: string) => {
-      dispatch(decreaseItemQuantity(Number(id)))
-    },
-    [dispatch]
-  )
+  const handleDecreaseQuantity = (id: string) => {
+    dispatch(decreaseItemQuantity(Number(id)))
+  }
 
   useEffect(() => {
     const data = JSON.parse(localStorage.getItem('jwellery-cart') || '[]').items
@@ -88,7 +78,7 @@ const CartBox = () => {
     setTotalCart(
       JSON.parse(localStorage.getItem('jwellery-cart') || '[]').totalAmount
     )
-  }, [handleRemoveToCart, handleQuantity, handleDecreaseQuantity])
+  }, [handleRemoveToCart, handleDecreaseQuantity, handleQuantity])
 
   const formatToIndianCurrency = (number: string) => {
     return new Intl.NumberFormat('en-IN', {
@@ -97,6 +87,13 @@ const CartBox = () => {
       maximumFractionDigits: 0, // If you don't want decimal places
     }).format(Number(number))
   }
+
+  if (cartProduct.length === 0)
+    return (
+      <div className="h-[30vh] w-full flex items-center justify-center text-4xl font-garamond capitalize mb-8">
+        No items in cart
+      </div>
+    )
 
   return (
     <>
